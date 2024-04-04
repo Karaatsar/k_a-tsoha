@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Etusivu{% endblock %}
+{% block content %}
+<h2>Etusivu</h2>
+<br> Tervetuloa keskustelupalstoille!
+<br> Olet kirjautuneena sisään nimellä {{ username }}. 
+<hr>
+<h2>Keskustelualueet:</h2>
+{% for category in list %}
+<h3><a href="/{{ category[0] }}">{{ category[1] }}</a></h3>
+<p>
+{% endblock %} 
+
