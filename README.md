@@ -9,6 +9,8 @@ projektin aihe on keskustelusovellus, joka on yksi esimerkkiaiheista, joita on a
 - Käyttäjä voi etsiä kaikki viestit, joiden osana on annettu sana.
 - Ylläpitäjä voi lisätä ja poistaa keskustelualueita.
 - Ylläpitäjä voi luoda salaisen alueen ja määrittää, keillä käyttäjillä on pääsy alueelle.
+
+  
 Tällä hetkellä, olen saanut tehdyksi erilaisia tiedostoja ja alkanut yhdistelemään niitä. vielä oikein mikään ei toimi, mutta ajan kanssa alkaa varmasti toimimaan.
 En ole saanut toimimaan fly.io-sovellusta, sitä varten pitäisi varmaankin mennä pajaan, sillä sen asennus ja tietojen laittaminen sinne tuntuu tällä hetkellä ylitsepääsemättömältä.
 SOVELLUSTA EI PYSTY VIELÄ TESTAAMAAN TUOTANNOSSA. (ainakaan itse en ole pystynyt, osaaaminen koko kurssilla tuntuu olevan nollassa)
