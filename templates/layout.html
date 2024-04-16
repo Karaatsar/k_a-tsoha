@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keskustelupalsta - {% block title %}{% endblock %}</title>
+    <!-- Add your CSS links or inline styles here -->
+</head>
+<body>
+    <header>
+        <h1>Keskustelupalsta</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Etusivu</a></li>
+                <li><a href="/login">Kirjaudu</a></li>
+                <li><a href="/logout">Kirjaudu ulos</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <hr>
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>

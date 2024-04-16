@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Etusivu{% endblock %}
+{% block content %}
+<h2>Etusivu</h2>
+<br> Tervetuloa keskustelupalstoille!
+<br> Olet kirjautuneena sisään nimellä {{ username }}. 
+<hr>
+<h2>ketjut:</h2>
+<ul>
+   <li> <a href="/ketju1/{{ ketju1.id }}"> Aurinkoinen appelsiini</a>
+   <li> <a href="/ketju2/{{ ketju2.id }}">  Kultainen kurpitsa</a>
+   <li> <a href="/ketju3/{{ ketju3.id }}">  Rohkea raparperi</a>
+</ul>
+{% endblock %} 
+

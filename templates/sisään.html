@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Uudet tunnukset!!{% endblock %}
+{% block content %}
+<h2>Uudet tunnukset!!</h2>
+
+<form action="/sisään" method="POST">
+<br> Käyttäjätunnus: <input type="text" name="username">
+<br> Salasana: <input type="password" name="password_1">
+<br> Salasana (uudelleen): <input type="password" name="password_2">
+<br> <input type="submit" value="Luo tunnukset">
+</form>
+{% endblock %}
