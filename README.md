@@ -25,4 +25,5 @@ projektin aihe on keskustelusovellus, joka on yksi esimerkkiaiheista, joita on a
 - Käyttäjä näkee sovelluksen etusivulla listan alueista sekä jokaisen alueen ketjujen ja viestien määrän ja viimeksi lähetetyn viestin ajankohdan.
 - Käyttäjä voi luoda alueelle uuden ketjun antamalla ketjun otsikon ja aloitusviestin sisällön.
 - Käyttäjä voi kirjoittaa uuden viestin olemassa olevaan ketjuun.
+
 (sovelluksen tehtävät ovat vielä vaiheessa)
