@@ -18,7 +18,8 @@ def login(username, password):
             return False
 
 def logout():
-    del session["user_id"]
+    if "user_id" in session: 
+        del session["user_id"]
 
 
 def register(username, password):
