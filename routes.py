@@ -7,9 +7,9 @@ import messages, users
 def etusivu():
     print("ETUSIVULLA OLLAAN")
     print("user_id" in session)
-    if "user_id" in session:
-        username = users.get_username(session["user_id"])
-        return render_template("etusivu.html", username=username)
+     username = users.get_username(session["user_id"])
+        message_list = messages.get_list()
+        return render_template("etusivu.html", username=username, messages=message_list)
     else:
         return redirect("/kirjaudu")
 
@@ -53,9 +53,9 @@ def sisaan():
 def ketju1():
     if "user_id" in session: 
         username = users.get_username(session["user_id"])
-        ketju_messages = messages.get_ketju_messages("ketju1.html")
+        ketju_messages = messages.get_ketju_messages("ketju1")
         count_messages = len(ketju_messages)
-        return render_template("ketju1.html", username=username, messages=messages, count=count_messages)
+        return render_template("ketju1.html", username=username, messages=ketju_messages, count=count_messages)
     else:
        return redirect("/kirjaudu")
 
@@ -63,9 +63,9 @@ def ketju1():
 def ketju2():
     if "user_id" in session: 
         username = users.get_username(session["user_id"])
-        ketju_messages = messages.get_ketju_messages("ketju2.html")
+        ketju_messages = messages.get_ketju_messages("ketju2")
         count_messages = len(ketju_messages)
-        return render_template("ketju2.html", username=username, messages=messages, count=count_messages)
+        return render_template("ketju2.html", username=username, messages=ketju_messages, count=count_messages)
     else:
        return redirect("/kirjaudu")
 
@@ -73,9 +73,9 @@ def ketju2():
 def ketju3():
     if "user_id" in session: 
         username = users.get_username(session["user_id"])
-        ketju_messages = messages.get_ketju_messages("ketju3.html")
+        ketju_messages = messages.get_ketju_messages("ketju3")
         count_messages = len(ketju_messages)
-        return render_template("ketju3.html", username=username, messages=messages, count=count_messages)
+        return render_template("ketju3.html", username=username, messages=ketju_messages, count=count_messages)
     else:
        return redirect("/kirjaudu")
 
@@ -88,4 +88,13 @@ def uusi():
        elif request.method == "POST":
             return redirect("/")
     else:
-       return redirect("/kirjaudu")         
+       return redirect("/kirjaudu")   
+
+@app.route("/send", methods=["POST"])
+def send_message():
+    if "user_id" in session:
+        content = request.form["content"]
+        if messages.send_message(content): 
+            return redirect("/")
+        else:
+            return render_template("error.html", message="Viestin lähetys ei on>
