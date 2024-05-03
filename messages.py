@@ -23,7 +23,16 @@ def get_ketju_messages(ketju_name):
     messages = result.fetchall()
     return messages
 
-def send_message(content, username, ketju_name):
-    sql= text("INSERT INTO messages (content, username, ketju) VALUES (: content, :username, :ketju_name)")
-    db.session.execute(sql, {"content": content, "username": username, "ketju_name": ketju_name})
-    db.session.commit()
+def send_message(content):
+    user_id = users.user_id()
+    if user_id == 0:
+        return False
+    sql = text("INSERT INTO messages (content, user_id, sent_at) VALUES (:conte>
+    try:
+        db.session.execute(sql, {"content": content, "user_id": user_id})
+        db.session.commit()
+        return True
+    except Exception as e:
+        print("Error sending message:", e)
+        db.session.rollback()
+        return False
