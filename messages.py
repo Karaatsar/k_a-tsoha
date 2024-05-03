@@ -27,7 +27,7 @@ def send_message(content):
     user_id = users.user_id()
     if user_id == 0:
         return False
-    sql = text("INSERT INTO messages (content, user_id, sent_at) VALUES (:conte>
+    sql = text("INSERT INTO messages (content, user_id, sent_at) VALUES (:content, :user_id, NOW())")
     try:
         db.session.execute(sql, {"content": content, "user_id": user_id})
         db.session.commit()
