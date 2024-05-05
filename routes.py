@@ -4,12 +4,12 @@ from flask import render_template, request, redirect, session
 import messages, users
 
 @app.route("/")
-def etusivu():
+def frontpage():
     print("ETUSIVULLA OLLAAN")
     print("user_id" in session)
      username = users.get_username(session["user_id"])
         message_list = messages.get_list()
-        return render_template("etusivu.html", username=username, messages=message_list)
+        return render_template("frontpage.html", username=username, messages=message_list)
     else:
         return redirect("/kirjaudu")
 
