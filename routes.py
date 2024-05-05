@@ -49,33 +49,33 @@ def inside():
        else:
           return render_template("error.html", message="Rekistöröinti ei onnistunut")
           
-@app.route("/ketju1")
-def ketju1():
+@app.route("/chain1")
+def chain1():
     if "user_id" in session: 
         username = users.get_username(session["user_id"])
-        ketju_messages = messages.get_ketju_messages("ketju1")
+        ketju_messages = messages.get_ketju_messages("chain1")
         count_messages = len(ketju_messages)
-        return render_template("ketju1.html", username=username, messages=ketju_messages, count=count_messages)
+        return render_template("chain1.html", username=username, messages=ketju_messages, count=count_messages)
     else:
        return redirect("/login")
 
-@app.route("/ketju2")
-def ketju2():
+@app.route("/chain2")
+def chain2():
     if "user_id" in session: 
         username = users.get_username(session["user_id"])
-        ketju_messages = messages.get_ketju_messages("ketju2")
+        ketju_messages = messages.get_ketju_messages("chain2")
         count_messages = len(ketju_messages)
-        return render_template("ketju2.html", username=username, messages=ketju_messages, count=count_messages)
+        return render_template("chain2.html", username=username, messages=ketju_messages, count=count_messages)
     else:
        return redirect("/login")
 
-@app.route("/ketju3")
-def ketju3():
+@app.route("/chain3")
+def chain3():
     if "user_id" in session: 
         username = users.get_username(session["user_id"])
-        ketju_messages = messages.get_ketju_messages("ketju3")
+        ketju_messages = messages.get_ketju_messages("chain3")
         count_messages = len(ketju_messages)
-        return render_template("ketju3.html", username=username, messages=ketju_messages, count=count_messages)
+        return render_template("chain3.html", username=username, messages=ketju_messages, count=count_messages)
     else:
        return redirect("/login")
 
