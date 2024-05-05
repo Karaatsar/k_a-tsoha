@@ -34,10 +34,10 @@ def logout():
     #return redirect("/")
 
 
-@app.route("/sisään", methods=["GET", "POST"])
-def sisaan():
+@app.route("/inside", methods=["GET", "POST"])
+def inside():
     if request.method == "GET":
-        return render_template("sisään.html")
+        return render_template("inside.html")
     if request.method == "POST":
        username = request.form["username"]
        password1 = request.form["password_1"]
