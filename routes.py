@@ -79,12 +79,12 @@ def ketju3():
     else:
        return redirect("/login")
 
-@app.route("/uusi", methods=["GET", "POST"])
-def uusi():
+@app.route("/new", methods=["GET", "POST"])
+def new():
     if "user_id" in session:
        if request.method == "GET":
             username = users.get_username(session["user_id"])
-            return render_template("uusi.html", username=username)
+            return render_template("new.html", username=username)
        elif request.method == "POST":
             return redirect("/")
     else:
