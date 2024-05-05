@@ -11,12 +11,12 @@ def frontpage():
         message_list = messages.get_list()
         return render_template("frontpage.html", username=username, messages=message_list)
     else:
-        return redirect("/kirjaudu")
+        return redirect("/login")
 
-@app.route("/kirjaudu", methods=["GET", "POST"])
-def kirjaudu():
+@app.route("/login", methods=["GET", "POST"])
+def login():
     if request.method == "GET":
-       return render_template("kirjaudu.html")
+       return render_template("login.html")
     if request.method == "POST":
        username = request.form["username"]
        password = request.form["password"]
@@ -57,7 +57,7 @@ def ketju1():
         count_messages = len(ketju_messages)
         return render_template("ketju1.html", username=username, messages=ketju_messages, count=count_messages)
     else:
-       return redirect("/kirjaudu")
+       return redirect("/login")
 
 @app.route("/ketju2")
 def ketju2():
@@ -67,7 +67,7 @@ def ketju2():
         count_messages = len(ketju_messages)
         return render_template("ketju2.html", username=username, messages=ketju_messages, count=count_messages)
     else:
-       return redirect("/kirjaudu")
+       return redirect("/login")
 
 @app.route("/ketju3")
 def ketju3():
@@ -77,7 +77,7 @@ def ketju3():
         count_messages = len(ketju_messages)
         return render_template("ketju3.html", username=username, messages=ketju_messages, count=count_messages)
     else:
-       return redirect("/kirjaudu")
+       return redirect("/login")
 
 @app.route("/uusi", methods=["GET", "POST"])
 def uusi():
@@ -88,7 +88,7 @@ def uusi():
        elif request.method == "POST":
             return redirect("/")
     else:
-       return redirect("/kirjaudu")   
+       return redirect("/login")   
 
 @app.route("/send", methods=["POST"])
 def send_message():
